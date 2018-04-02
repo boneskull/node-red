@@ -1,5 +1,5 @@
 /Gruntfile.js
 /.git/*
-/lib/*
+packages/node-red/lib/*
 *.backup
 /public/*

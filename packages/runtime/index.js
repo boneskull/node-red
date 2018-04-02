@@ -20,7 +20,7 @@ var path = require('path');
 var runtime = require("./runtime");
 var api = require("./api");
 
-process.env.NODE_RED_HOME = process.env.NODE_RED_HOME || path.resolve(__dirname+"/..");
+process.env.NODE_RED_HOME = process.env.NODE_RED_HOME || require.resolve('node-red');
 
 var nodeApp = null;
 var adminApp = null;
@@ -39,7 +39,7 @@ function checkVersion(userSettings) {
 }
 
 function checkBuild() {
-    var editorFile = path.resolve(path.join(__dirname,"..","public","red","red.min.js"));
+    var editorFile = path.join(require.resolve('@node-red/editor'), 'public', 'red', 'red.min.js');
     try {
         var stats = fs.statSync(editorFile);
     } catch(err) {
@@ -62,7 +62,7 @@ module.exports = {
         }
 
         if (!userSettings.coreNodesDir) {
-            userSettings.coreNodesDir = path.resolve(path.join(__dirname,"..","nodes"));
+            userSettings.coreNodesDir = path.join(require.resolve('@node-red/core-nodes'), 'nodes');
         }
 
         if (userSettings.httpAdminRoot !== false) {

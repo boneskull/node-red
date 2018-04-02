@@ -1,0 +1,29 @@
+{
+  "name": "@node-red/editor",
+  "version": "0.18.4",
+  "description": "A visual tool for wiring the Internet of Things",
+  "homepage": "http://nodered.org",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "keywords": [
+    "editor",
+    "messaging",
+    "iot",
+    "flow"
+  ],
+  "author": "Nick O'Leary <nick.oleary@gmail.com>",
+  "engines": {
+    "node": ">=4"
+  },
+  "devDependencies": {
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-sass": "^2.1.0"
+  },
+  "scripts": {
+    "build": "grunt build"
+  }
+}
