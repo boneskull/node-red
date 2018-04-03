@@ -4,7 +4,12 @@
   "description": "A visual tool for wiring the Internet of Things",
   "homepage": "http://nodered.org",
   "license": "Apache-2.0",
-  "keywords": ["editor", "messaging", "iot", "flow"],
+  "keywords": [
+    "editor",
+    "messaging",
+    "iot",
+    "flow"
+  ],
   "author": "Nick O'Leary <nick.oleary@gmail.com>",
   "dependencies": {
     "body-parser": "1.18.2",
@@ -32,5 +37,8 @@
   },
   "engines": {
     "node": ">=4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

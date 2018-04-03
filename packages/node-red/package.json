@@ -12,26 +12,19 @@
   ],
   "author": "Nick O'Leary <nick.oleary@gmail.com>",
   "dependencies": {
-    "@node-red/core-nodes": "^0.18.4",
+    "@node-red/cli": "0.18.4",
+    "@node-red/core-nodes": "0.18.4",
     "@node-red/editor": "0.18.4",
-    "@node-red/runtime": "^0.18.4",
-    "basic-auth": "2.0.0",
-    "bcryptjs": "2.4.3",
-    "express": "4.16.2",
-    "fs-extra": "5.0.0",
+    "@node-red/runtime": "0.18.4",
     "node-red-node-email": "~0.1.27",
     "node-red-node-feedparser": "~0.1.12",
     "node-red-node-rbe": "~0.2.3",
-    "node-red-node-twitter": "~0.1.13",
-    "nopt": "4.0.1"
-  },
-  "optionalDependencies": {
-    "bcrypt": "~1.0.3"
-  },
-  "bin": {
-    "node-red": "lib/cli.js"
+    "node-red-node-twitter": "~0.1.13"
   },
   "engines": {
     "node": ">=4"
+  },
+  "scripts": {
+    "start": "node-red"
   }
 }

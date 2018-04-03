@@ -71,7 +71,7 @@ var version;
 
 function getVersion() {
     if (!version) {
-        version = require(path.join(__dirname,"..","..","package.json")).version;
+        version = require(path.join(__dirname, '..', 'package.json')).version;
         /* istanbul ignore else */
         try {
             fs.statSync(path.join(__dirname,"..","..",".git"));

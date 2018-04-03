@@ -5,17 +5,22 @@
   "homepage": "http://nodered.org",
   "license": "Apache-2.0",
   "main": "index.js",
+  "author": "Nick O'Leary <nick.oleary@gmail.com>",
   "keywords": [
     "editor",
     "messaging",
     "iot",
     "flow"
   ],
-  "author": "Nick O'Leary <nick.oleary@gmail.com>",
   "engines": {
     "node": ">=4"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-cli": "^1.2.0",
     "grunt-concurrent": "^2.3.1",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",

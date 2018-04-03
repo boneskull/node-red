@@ -2,11 +2,24 @@
   "name": "@node-red/runtime",
   "version": "0.18.4",
   "description": "A visual tool for wiring the Internet of Things",
-  "main": "index.js",
-  "license": "Apache-2.0",
-  "author": "Nick O'Leary <nick.oleary@gmail.com>",
   "homepage": "http://nodered.org",
+  "license": "Apache-2.0",
+  "main": "red.js",
+  "author": "Nick O'Leary <nick.oleary@gmail.com>",
+  "keywords": [
+    "editor",
+    "messaging",
+    "iot",
+    "flow"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "1.18.2",
     "clone": "2.1.1",
     "cors": "2.8.4",
@@ -25,5 +38,8 @@
     "uglify-js": "3.3.6",
     "when": "3.7.8",
     "ws": "1.1.5"
+  },
+  "optionalDependencies": {
+    "bcrypt": "~1.0.3"
   }
 }

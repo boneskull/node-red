@@ -24,7 +24,8 @@ catch(e) { bcrypt = require('bcryptjs'); }
 var nopt = require("nopt");
 var path = require("path");
 var fs = require("fs-extra");
-var RED = require("@node-red/runtime");
+
+process.env.NODE_RED_HOME = process.env.NODE_RED_HOME || process.env.INIT_CWD || path.resolve(__dirname, '..', '..', 'node-red');
 
 var server;
 var app = express();
@@ -56,23 +57,6 @@ nopt.invalidHandler = function(k,v,t) {
 
 var parsedArgs = nopt(knownOpts,shortHands,process.argv,2)
 
-if (parsedArgs.help) {
-    console.log("Node-RED v"+RED.version());
-    console.log("Usage: node-red [-v] [-?] [--settings settings.js] [--userDir DIR]");
-    console.log("                [--port PORT] [--title TITLE] [flows.json]");
-    console.log("");
-    console.log("Options:");
-    console.log("  -p, --port     PORT  port to listen on");
-    console.log("  -s, --settings FILE  use specified settings file");
-    console.log("      --title    TITLE process window title");
-    console.log("  -u, --userDir  DIR   use specified user directory");
-    console.log("  -v, --verbose        enable verbose output");
-    console.log("  -?, --help           show this help");
-    console.log("");
-    console.log("Documentation can be found at http://nodered.org");
-    process.exit();
-}
-
 if (parsedArgs.argv.remain.length > 0) {
     flowFile = parsedArgs.argv.remain[0];
 }
@@ -97,7 +81,7 @@ if (parsedArgs.settings) {
             // $HOME/.node-red/settings.js exists
             settingsFile = userSettingsFile;
         } else {
-            var defaultSettings = path.join(__dirname,"settings.js");
+            var defaultSettings = require.resolve('./settings.js');
             var settingsStat = fs.statSync(defaultSettings);
             if (settingsStat.mtime.getTime() <= settingsStat.ctime.getTime()) {
                 // Default settings file has not been modified - safe to copy
@@ -184,6 +168,37 @@ if (flowFile) {
 }
 if (parsedArgs.userDir) {
     settings.userDir = parsedArgs.userDir;
+}
+
+if (!settings.editorDir) {
+    settings.editorDir = path.resolve(process.env.NODE_RED_HOME, 'node_modules', '@node-red', 'editor');
+}
+
+if (!settings.runtimeDir) {
+    settings.runtimeDir = path.resolve(process.env.NODE_RED_HOME, 'node_modules', '@node-red', 'runtime');
+}
+
+if (!settings.coreNodesDir) {
+    settings.coreNodesDir = path.resolve(process.env.NODE_RED_HOME, 'node_modules', '@node-red', 'core-nodes');
+}
+
+var RED = require(settings.runtimeDir);
+
+if (parsedArgs.help) {
+    console.log("Node-RED v"+RED.version());
+    console.log("Usage: node-red [-v] [-?] [--settings settings.js] [--userDir DIR]");
+    console.log("                [--port PORT] [--title TITLE] [flows.json]");
+    console.log("");
+    console.log("Options:");
+    console.log("  -p, --port     PORT  port to listen on");
+    console.log("  -s, --settings FILE  use specified settings file");
+    console.log("      --title    TITLE process window title");
+    console.log("  -u, --userDir  DIR   use specified user directory");
+    console.log("  -v, --verbose        enable verbose output");
+    console.log("  -?, --help           show this help");
+    console.log("");
+    console.log("Documentation can be found at http://nodered.org");
+    process.exit();
 }
 
 try {
