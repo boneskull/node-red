@@ -81,6 +81,9 @@
     },
     "devDependencies": {
         "chromedriver": "^2.33.2",
+        "common-path-prefix": "^1.0.0",
+        "dependency-tree": "^6.0.1",
+        "globule": "^1.2.0",
         "grunt": "~1.0.1",
         "grunt-chmod": "~1.1.1",
         "grunt-cli": "~1.2.0",
@@ -110,5 +113,10 @@
     },
     "engines": {
         "node": ">=4"
+    },
+    "packages": {
+        "@node-red/nodes": "nodes/**/*.js",
+        "@node-red/runtime": "red/red.js",
+        "@node-red/cli": "cli/red.js"
     }
 }
