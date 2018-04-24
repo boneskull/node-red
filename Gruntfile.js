@@ -29,18 +29,6 @@ module.exports = function(grunt) {
         paths: {
             dist: ".dist"
         },
-        simplemocha: {
-            options: {
-                globals: ['expect'],
-                timeout: 3000,
-                ignoreLeaks: false,
-                ui: 'bdd',
-                reporter: 'spec'
-            },
-            all: { src: ['test/**/*_spec.js'] },
-            core: { src: ["test/_spec.js","test/red/**/*_spec.js"]},
-            nodes: { src: ["test/nodes/**/*_spec.js"]}
-        },
         webdriver: {
             all: {
                 configFile: 'test/editor/wdio.conf.js'
@@ -228,7 +216,6 @@ module.exports = function(grunt) {
     
     });
 
-    grunt.loadNpmTasks('grunt-simple-mocha');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-nodemon');

@@ -26,7 +26,6 @@
         "grunt-jsonlint": "~1.1.0",
         "grunt-mocha-istanbul": "5.0.2",
         "grunt-nodemon": "~0.4.2",
-        "grunt-simple-mocha": "~0.4.1",
         "grunt-webdriver": "^2.0.3",
         "istanbul": "0.4.5",
         "lerna": "^2.9.0",
