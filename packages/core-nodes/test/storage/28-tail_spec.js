@@ -25,7 +25,7 @@ var helper = require("../helper.js");
 describe('tail Node', function() {
 
     var wait = 150;
-    var resourcesDir = path.join(__dirname,"..","..","..","resources");
+    var resourcesDir = path.join(__dirname,"..","resources");
     var fileToTail = path.join(resourcesDir,"28-tail-test-file.txt");
 
     beforeEach(function(done) {

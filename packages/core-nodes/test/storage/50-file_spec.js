@@ -26,7 +26,7 @@ describe('file Nodes', function() {
 
     describe('file out Node', function() {
 
-        var resourcesDir = path.join(__dirname,"..","..","..","resources");
+        var resourcesDir = path.join(__dirname,"..","resources");
         var fileToTest = path.join(resourcesDir,"50-file-test-file.txt");
         var wait = 150;
 
@@ -471,7 +471,7 @@ describe('file Nodes', function() {
 
     describe('file in Node', function() {
 
-        var resourcesDir = path.join(__dirname,"..","..","..","resources");
+        var resourcesDir = path.join(__dirname,"..","resources");
         var fileToTest = path.join(resourcesDir,"50-file-test-file.txt");
         var wait = 150;
 

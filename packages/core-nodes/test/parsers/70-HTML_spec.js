@@ -24,7 +24,7 @@ var helper = require("../helper.js");
 
 describe('html node', function() {
 
-    var resourcesDir = __dirname+ path.sep + ".." + path.sep + ".." + path.sep + ".." + path.sep + "resources" + path.sep;
+    var resourcesDir = path.join(__dirname, '..', 'resources');
     var file = path.join(resourcesDir, "70-HTML-test-file.html");
 
     before(function(done) {

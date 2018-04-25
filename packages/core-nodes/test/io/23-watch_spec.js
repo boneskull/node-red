@@ -24,7 +24,7 @@ var watchNode = require("../../nodes/io/23-watch.js");
 describe('watch Node', function() {
     this.timeout(5000);
 
-    var resourcesDir = path.join(__dirname,"..","..","..","resources");
+    var resourcesDir = path.join(__dirname,"..","resources");
     var baseDir = path.join(resourcesDir, "23-watch-test-dir");
     var count = 0;
 
