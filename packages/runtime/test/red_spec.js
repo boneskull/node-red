@@ -18,7 +18,7 @@ var sinon = require("sinon");
 var fs = require("fs");
 var path = require("path");
 
-var RED = require("../../runtime/red");
+var RED = require("../red");
 var runtime = require("../../runtime/runtime");
 var api = require("../../runtime/api");
 
@@ -40,8 +40,7 @@ describe("runtime/red", function() {
         it('warns if build has not been run',function() {
             sinon.stub(fs,"statSync",function() { throw new Error();});
 
-            /*jshint immed: false */
-            (function() {
+            (() => {
                 RED.init({},{});
             }).should.throw("Node-RED not built");
         });
@@ -53,7 +52,7 @@ describe("runtime/red", function() {
 
     describe("externals", function() {
         it('reports version', function() {
-            var p = require(path.join(process.env.NODE_RED_HOME,"package.json")).version;
+            var p = require('../package.json').version;
             RED.version().indexOf(p).should.eql(0);
         });
         it.skip('access server externals', function() {
