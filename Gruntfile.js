@@ -43,9 +43,9 @@ module.exports = function(grunt) {
                 reportFormats: ['lcov','html'],
                 print: 'both'
             },
-            all: { src: ['test/**/*_spec.js'] },
-            core: { src: ["test/_spec.js","test/red/**/*_spec.js"]},
-            nodes: { src: ["test/nodes/**/*_spec.js"]}
+            all: { src: ['packages/**/test/**/*_spec.js'] },
+            runtime: { src: ["packages/runtime/test/_spec.js","packages/runtime/test/**/*_spec.js"]},
+            nodes: { src: ["packages/core-nodes/test/**/*_spec.js"]}
         },
         jshint: {
             options: {
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
             messages: {
                 src: [
                     'nodes/core/locales/en-US/messages.json',
-                    'red/api/locales/en-US/editor.json',
+                    'runtime/api/locales/en-US/editor.json',
                     'red/runtime/locales/en-US/runtime.json'
                 ]
             },
@@ -127,7 +127,7 @@ module.exports = function(grunt) {
             json: {
                 files: [
                     'nodes/core/locales/en-US/messages.json',
-                    'red/api/locales/en-US/editor.json',
+                    'runtime/api/locales/en-US/editor.json',
                     'red/runtime/locales/en-US/runtime.json'
                 ],
                 tasks: ['jsonlint:messages']
@@ -227,11 +227,11 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default',
         'Builds editor content then runs code style checks and unit tests on all components',
-        ['build','test-core','test-editor','test-nodes']);
+        ['build','test-runtime','test-editor','test-nodes']);
 
-    grunt.registerTask('test-core',
+    grunt.registerTask('test-runtime',
         'Runs code style check and unit tests on core runtime code',
-        ['build','mocha_istanbul:core']);
+        ['build','mocha_istanbul:runtime']);
 
     grunt.registerTask('test-editor',
         'Runs code style check on editor code',
