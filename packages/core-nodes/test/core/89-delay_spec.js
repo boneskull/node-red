@@ -16,8 +16,8 @@
 
 var should = require("should");
 
-var delayNode = require("../../../../nodes/core/core/89-delay.js");
-var helper = require("../../helper.js");
+var delayNode = require("../../nodes/core/89-delay.js");
+var helper = require("../helper.js");
 
 var GRACE_PERCENTAGE=10;
 

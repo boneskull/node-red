@@ -19,8 +19,8 @@ var sinon = require("sinon");
 var path = require("path");
 var fs = require('fs-extra');
 
-var htmlNode = require("../../../../nodes/core/parsers/70-HTML.js");
-var helper = require("../../helper.js");
+var htmlNode = require("../../nodes/parsers/70-HTML.js");
+var helper = require("../helper.js");
 
 describe('html node', function() {
 

@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var jsonNode = require("../../../../nodes/core/parsers/70-JSON.js");
-var helper = require("../../helper.js");
+var jsonNode = require("../../nodes/parsers/70-JSON.js");
+var helper = require("../helper.js");
 
 describe('JSON node', function() {
 

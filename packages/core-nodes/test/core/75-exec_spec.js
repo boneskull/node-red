@@ -16,8 +16,8 @@
 
 var should = require("should");
 var sinon = require("sinon");
-var helper = require("../../helper.js");
-var execNode = require("../../../../nodes/core/core/75-exec.js");
+var helper = require("../helper.js");
+var execNode = require("../../nodes/core/75-exec.js");
 var osType = require("os").type();
 
 var child_process = require('child_process');

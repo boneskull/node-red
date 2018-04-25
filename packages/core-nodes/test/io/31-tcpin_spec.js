@@ -16,8 +16,8 @@
 
 var net = require("net");
 var should = require("should");
-var helper = require("../../helper.js");
-var tcpinNode = require("../../../../nodes/core/io/31-tcpin.js");
+var helper = require("../helper.js");
+var tcpinNode = require("../../nodes/io/31-tcpin.js");
 
 
 describe('TCP in Node', function() {

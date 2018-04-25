@@ -19,7 +19,7 @@ if (!RED) {
 }
 RED.debug = (function() {
     var config;
-    var messageList;
+    var messageList;1
     var messageTable;
     var filterType = "filterAll";
     var filteredNodes = {}; // id->true means hide, so default to all visible

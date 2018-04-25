@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var yamlNode = require("../../../../nodes/core/parsers/70-YAML.js");
-var helper = require("../../helper.js");
+var yamlNode = require("../../nodes/parsers/70-YAML.js");
+var helper = require("../helper.js");
 
 describe('YAML node', function() {
 

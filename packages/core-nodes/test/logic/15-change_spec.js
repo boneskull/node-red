@@ -16,8 +16,8 @@
 
 var should = require("should");
 
-var changeNode = require("../../../../nodes/core/logic/15-change.js");
-var helper = require("../../helper.js");
+var changeNode = require("../../nodes/logic/15-change.js");
+var helper = require("../helper.js");
 
 describe('change Node', function() {
 

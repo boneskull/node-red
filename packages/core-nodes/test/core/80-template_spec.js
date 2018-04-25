@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var templateNode = require("../../../../nodes/core/core/80-template.js");
-var helper = require("../../helper.js");
+var templateNode = require("../../nodes/core/80-template.js");
+var helper = require("../helper.js");
 
 describe('template node', function() {
 

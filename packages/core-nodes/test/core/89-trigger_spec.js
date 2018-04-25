@@ -16,9 +16,9 @@
 
 var should = require("should");
 var sinon = require("sinon");
-var helper = require("../../helper.js");
-var triggerNode = require("../../../../nodes/core/core/89-trigger.js");
-var RED = require("../../../../red/red.js");
+var helper = require("../helper.js");
+var triggerNode = require("../../nodes/core/89-trigger.js");
+var RED = require("@node-red/runtime/red.js");
 
 describe('trigger node', function() {
 

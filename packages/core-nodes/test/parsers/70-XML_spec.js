@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var xmlNode = require("../../../../nodes/core/parsers/70-XML.js");
-var helper = require("../../helper.js");
+var xmlNode = require("../../nodes/parsers/70-XML.js");
+var helper = require("../helper.js");
 
 describe('XML node', function() {
 

@@ -19,8 +19,8 @@ var http = require("http");
 var should = require("should");
 var express = require("express");
 var bodyParser = require('body-parser');
-var helper = require("../../helper.js");
-var httpRequestNode = require("../../../../nodes/core/io/21-httprequest.js");
+var helper = require("../helper.js");
+var httpRequestNode = require("../../nodes/io/21-httprequest.js");
 var hashSum = require("hash-sum");
 
 describe('HTTP Request Node', function() {

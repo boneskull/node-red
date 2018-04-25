@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var sentimentNode = require("../../../../nodes/core/analysis/72-sentiment.js");
-var helper = require("../../helper.js");
+var sentimentNode = require("../../nodes/analysis/72-sentiment.js");
+var helper = require("../helper.js");
 
 describe('sentiment Node', function() {
 

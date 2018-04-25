@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var catchNode = require("../../../../nodes/core/core/25-status.js");
-var helper = require("../../helper.js");
+var catchNode = require("../../nodes/core/25-status.js");
+var helper = require("../helper.js");
 
 describe('status Node', function() {
 

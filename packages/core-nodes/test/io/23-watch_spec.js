@@ -17,8 +17,8 @@
 var fs = require("fs-extra");
 var path = require("path");
 var should = require("should");
-var helper = require("../../helper.js");
-var watchNode = require("../../../../nodes/core/io/23-watch.js");
+var helper = require("../helper.js");
+var watchNode = require("../../nodes/io/23-watch.js");
 
 
 describe('watch Node', function() {

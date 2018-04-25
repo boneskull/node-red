@@ -19,8 +19,8 @@ var path = require('path');
 var fs = require('fs-extra');
 var os = require('os');
 var sinon = require("sinon");
-var fileNode = require("../../../../nodes/core/storage/50-file.js");
-var helper = require("../../helper.js");
+var fileNode = require("../../nodes/storage/50-file.js");
+var helper = require("../helper.js");
 
 describe('file Nodes', function() {
 

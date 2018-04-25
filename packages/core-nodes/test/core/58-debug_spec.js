@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var debugNode = require("../../../../nodes/core/core/58-debug.js");
-var helper = require("../../helper.js");
+var debugNode = require("../../nodes/core/58-debug.js");
+var helper = require("../helper.js");
 var WebSocket = require('ws');
 
 describe('debug node', function() {

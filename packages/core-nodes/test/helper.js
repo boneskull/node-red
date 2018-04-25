@@ -29,14 +29,14 @@ if (!process.version.match(/^v0\.[0-9]\./)) {
         nock = null;
     }
 }
-var RED = require("../../red/red.js");
-var redNodes = require("../../red/runtime/nodes");
-var flows = require("../../red/runtime/nodes/flows");
-var credentials = require("../../red/runtime/nodes/credentials");
-var comms = require("../../runtime/api/editor/comms.js");
-var log = require("../../red/runtime/log.js");
-var context = require("../../red/runtime/nodes/context.js");
-var events = require("../../red/runtime/events.js");
+var RED = require("@node-red/runtime/red.js");
+var redNodes = require("@node-red/runtime/runtime/nodes");
+var flows = require("@node-red/runtime/runtime/nodes/flows");
+var credentials = require("@node-red/runtime/runtime/nodes/credentials");
+var comms = require("@node-red/runtime/api/editor/comms.js");
+var log = require("@node-red/runtime/runtime/log.js");
+var context = require("@node-red/runtime/runtime/nodes/context.js");
+var events = require("@node-red/runtime/runtime/events.js");
 
 var http = require('http');
 var express = require('express');

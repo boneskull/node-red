@@ -16,9 +16,9 @@
 
 var should = require("should");
 
-var switchNode = require("../../../../nodes/core/logic/10-switch.js");
-var helper = require("../../helper.js");
-var RED = require("../../../../red/red.js");
+var switchNode = require("../../nodes/logic/10-switch.js");
+var helper = require("../helper.js");
+var RED = require("@node-red/runtime/red.js");
 
 describe('switch Node', function() {
 
@@ -669,8 +669,8 @@ describe('switch Node', function() {
                     }
                     var index = parts.index;
                     var eindex = counts[ix];
-                    var eval = evals[eindex];
-                    payload.should.equal(eval);
+                    var evil = evals[eindex];
+                    payload.should.equal(evil);
                     counts[ix]++;
                     count++;
                     if (count === recv_count) {

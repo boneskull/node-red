@@ -16,8 +16,8 @@
 
 var should = require("should");
 
-var rangeNode = require("../../../../nodes/core/logic/16-range.js");
-var helper = require("../../helper.js");
+var rangeNode = require("../../nodes/logic/16-range.js");
+var helper = require("../helper.js");
 
 describe('range Node', function() {
 

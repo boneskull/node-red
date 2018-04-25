@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var csvNode = require("../../../../nodes/core/parsers/70-CSV.js");
-var helper = require("../../helper.js");
+var csvNode = require("../../nodes/parsers/70-CSV.js");
+var helper = require("../helper.js");
 
 describe('CSV node', function() {
 

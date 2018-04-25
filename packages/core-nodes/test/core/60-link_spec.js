@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var linkNode = require("../../../../nodes/core/core/60-link.js");
-var helper = require("../../helper.js");
+var linkNode = require("../../nodes/core/60-link.js");
+var helper = require("../helper.js");
 
 describe('link Node', function() {
 

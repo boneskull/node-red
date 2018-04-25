@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var unknown = require("../../../../nodes/core/core/98-unknown.js");
-var helper = require("../../helper.js");
+var unknown = require("../../nodes/core/98-unknown.js");
+var helper = require("../helper.js");
 
 describe('unknown Node', function() {
 

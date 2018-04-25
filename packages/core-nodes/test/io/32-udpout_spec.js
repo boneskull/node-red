@@ -16,8 +16,8 @@
 
 var dgram = require("dgram");
 var should = require("should");
-var helper = require("../../helper.js");
-var udpNode = require("../../../../nodes/core/io/32-udp.js");
+var helper = require("../helper.js");
+var udpNode = require("../../nodes/io/32-udp.js");
 
 
 describe('UDP out Node', function() {

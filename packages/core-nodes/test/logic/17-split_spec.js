@@ -15,10 +15,10 @@
  **/
 
 var should = require("should");
-var splitNode = require("../../../../nodes/core/logic/17-split.js");
-var joinNode = require("../../../../nodes/core/logic/17-split.js");
-var helper = require("../../helper.js");
-var RED = require("../../../../red/red.js");
+var splitNode = require("../../nodes/logic/17-split.js");
+var joinNode = require("../../nodes/logic/17-split.js");
+var helper = require("../helper.js");
+var RED = require("@node-red/runtime/red.js");
 
 describe('SPLIT node', function() {
 

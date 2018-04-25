@@ -15,8 +15,8 @@
  **/
 
 var should = require("should");
-var injectNode = require("../../../../nodes/core/core/20-inject.js");
-var helper = require("../../helper.js");
+var injectNode = require("../../nodes/core/20-inject.js");
+var helper = require("../helper.js");
 
 describe('inject node', function() {
 
