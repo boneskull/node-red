@@ -16,7 +16,7 @@
 
 module.exports = {
     "package.json": function(project) {
-        var package = {
+        var pkg = {
             "name": project.name,
             "description": project.summary||"A Node-RED Project",
             "version": "0.0.1",
@@ -28,11 +28,11 @@ module.exports = {
         };
         if (project.files) {
             if (project.files.flow) {
-                package['node-red'].settings.flowFile = project.files.flow;
-                package['node-red'].settings.credentialsFile = project.files.credentials;
+                pkg['node-red'].settings.flowFile = project.files.flow;
+                pkg['node-red'].settings.credentialsFile = project.files.credentials;
             }
         }
-        return JSON.stringify(package,"",4);
+        return JSON.stringify(pkg,"",4);
     },
     "README.md": function(project) {
         var content = project.name+"\n"+("=".repeat(project.name.length))+"\n\n";
