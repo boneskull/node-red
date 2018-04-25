@@ -20,7 +20,7 @@ const PACKAGES_PATH = path.join(__dirname, 'packages');
 const EDITOR_PATH = path.join(PACKAGES_PATH, 'editor');
 const RUNTIME_PATH = path.join(PACKAGES_PATH, 'runtime');
 const CORE_NODES_PATH = path.join(PACKAGES_PATH, 'core-nodes');
-const BUILD_PATH = path.join(__dirname, 'public');
+const BUILD_PATH = path.join(EDITOR_PATH, 'public');
 const CLI_PATH = path.join(PACKAGES_PATH, 'cli');
 
 module.exports = function(grunt) {
