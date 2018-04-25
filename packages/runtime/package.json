@@ -19,6 +19,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@node-red/editor": "^0.18.4",
     "bcryptjs": "^2.4.3",
     "body-parser": "1.18.2",
     "clone": "2.1.1",
