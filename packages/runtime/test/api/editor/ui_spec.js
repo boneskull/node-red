@@ -24,6 +24,7 @@ var EventEmitter = require('events').EventEmitter;
 var events = new EventEmitter();
 var ui = require("../../../../runtime/api/editor/ui");
 
+const EDITOR_PATH = path.dirname(require.resolve('@node-red/editor'));
 
 describe("api/editor/ui", function() {
     var app;
@@ -33,8 +34,11 @@ describe("api/editor/ui", function() {
             events:events,
             nodes: {
                 getNodeIconPath: function(module,icon) {
-                    return path.resolve(__dirname+'/../../../../../public/icons/arrow-in.png');
+                    return path.join(EDITOR_PATH, 'public', 'icons', 'arrow-in.png');
                 }
+            },
+            settings: {
+                editorDir: EDITOR_PATH
             }
         });
     });
@@ -91,7 +95,7 @@ describe("api/editor/ui", function() {
             }
         }
         it('returns the requested icon', function(done) {
-            var defaultIcon = fs.readFileSync(path.resolve(__dirname+'/../../../../public/icons/arrow-in.png'));
+            var defaultIcon = fs.readFileSync(path.join(EDITOR_PATH, 'public', 'icons', 'arrow-in.png'));
             request(app)
                 .get("/icons/module/icon.png")
                 .expect("Content-Type", /image\/png/)
