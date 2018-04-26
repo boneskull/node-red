@@ -26,6 +26,10 @@ var api = require("../../runtime/api");
 describe("runtime/red", function() {
 
     describe("check build", function() {
+        const userSettings = {
+            editorDir: path.dirname(require.resolve('@node-red/editor'))
+        };
+
         beforeEach(function() {
             sinon.stub(runtime,"init",function() {});
             sinon.stub(api,"init",function() {});
@@ -41,12 +45,12 @@ describe("runtime/red", function() {
             sinon.stub(fs,"statSync",function() { throw new Error();});
 
             (() => {
-                RED.init({},{});
+                RED.init(userSettings);
             }).should.throw("Node-RED not built");
         });
         it('passed if build has been run',function() {
             sinon.stub(fs,"statSync",function() { });
-            RED.init({},{});
+            RED.init(userSettings);
         });
     });
 
