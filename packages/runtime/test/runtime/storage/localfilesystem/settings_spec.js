@@ -23,9 +23,7 @@ var localfilesystemSettings = require("../../../../../runtime/runtime/storage/lo
 describe('storage/localfilesystem/settings', function() {
     var userDir = path.join(__dirname,".testUserHome");
     beforeEach(function(done) {
-        fs.remove(userDir,function(err) {
-            fs.mkdir(userDir,done);
-        });
+        fs.ensureDir(userDir, done);
     });
     afterEach(function(done) {
         fs.remove(userDir,done);
