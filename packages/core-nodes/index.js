@@ -1,0 +1,1 @@
+// this is a dummy file so we can `require.resolve('@node-red/core-nodes')`
