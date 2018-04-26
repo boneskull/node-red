@@ -49,7 +49,7 @@ module.exports = function(grunt) {
                 print: 'both'
             },
             all: { src: [`${PACKAGES_PATH}/**/test/**/*_spec.js`]  },
-            runtime: { src: [`"${RUNTIME_PATH}/test/**/*_spec.js`] },
+            runtime: { src: [`${RUNTIME_PATH}/test/**/*_spec.js`] },
             nodes: { src: [`${CORE_NODES_PATH}/test/**/*_spec.js`] }
         },
         jshint: {
@@ -68,6 +68,7 @@ module.exports = function(grunt) {
             },
             all: [
                 'Gruntfile.js',
+                '.wallaby.js'
                 `${RUNTIME_PATH}/red.js`,
                 `${RUNTIME_PATH}/@(api|runtime)/**/*.js`,
                 `${CORE_NODES_PATH}/nodes/**/*.js`,
@@ -75,7 +76,7 @@ module.exports = function(grunt) {
             ],
             root: {
                 files: {
-                    src: ['Gruntfile.js']
+                    src: ['Gruntfile.js', '.wallaby.js']
                 }
             },
             runtime: {
