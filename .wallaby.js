@@ -17,10 +17,13 @@ module.exports = wallaby => {
       {pattern: `${CORE_NODES_PATH}/nodes/**/*.html`, instrument: false},
       {pattern: `${CORE_NODES_PATH}/test/resources/**`, instrument: false},
       `${CORE_NODES_PATH}/test/helper.js`,
+      {pattern: `${RUNTIME_PATH}/resources/**`, instrument: false},
+      {pattern: `${RUNTIME_PATH}/test/runtime/nodes/resources/**`, instrument: false},
       `${RUNTIME_PATH}/api/**/*.js`,
       `${RUNTIME_PATH}/runtime/**/*.js`,
       `${RUNTIME_PATH}/red.js`,
       `${RUNTIME_PATH}/package.json`,
+      {pattern: `${RUNTIME_PATH}/runtime/storage/localfilesystem/projects/git/authWriter.js`, instrument: false}
     ],
 
     tests: [
