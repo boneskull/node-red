@@ -42,6 +42,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@node-red/runtime": "^0.18.4"
+    "@node-red/runtime": "^0.18.4",
+    "@node-red/editor": "^0.18.4"
   }
 }
