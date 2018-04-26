@@ -19,7 +19,9 @@ var sinon = require("sinon");
 var when = require("when");
 var request = require('supertest');
 var express = require("express");
+var path = require('path');
 var nock;
+
 if (!process.version.match(/^v0\.[0-9]\./)) {
     // only set nock for node >= 0.10
     try {
@@ -37,9 +39,10 @@ var comms = require("@node-red/runtime/api/editor/comms.js");
 var log = require("@node-red/runtime/runtime/log.js");
 var context = require("@node-red/runtime/runtime/nodes/context.js");
 var events = require("@node-red/runtime/runtime/events.js");
-
 var http = require('http');
-var express = require('express');
+
+const EDITOR_PATH = path.dirname(require.resolve('@node-red/editor'));
+
 var app = express();
 
 var address = '127.0.0.1';
@@ -78,7 +81,8 @@ module.exports = {
         };
 
         var settings = {
-            available: function() { return false; }
+            available: function() { return false; },
+            editorDir: EDITOR_PATH
         };
 
         var red = {};
@@ -135,7 +139,8 @@ module.exports = {
         server = http.createServer(function(req,res) { app(req,res); });
         RED.init(server, {
             SKIP_BUILD_CHECK: true,
-            logging:{console:{level:'off'}}
+            logging:{console:{level:'off'}},
+            editorDir: EDITOR_PATH
         });
         server.listen(listenPort, address);
         server.on('listening', function() {
