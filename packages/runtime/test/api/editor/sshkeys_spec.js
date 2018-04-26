@@ -53,7 +53,8 @@ describe("api/editor/sshkeys", function() {
                     return when.resolve();
                 }
             },
-            log:{audit:function(){},error:function(msg){errors.push(msg)}}
+            log:{audit:function(){},error:function(msg){errors.push(msg)}},
+            editorDir: fspath.dirname(require.resolve('@node-red/editor'))
         },
         storage: {
             projects: {
