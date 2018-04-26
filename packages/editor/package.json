@@ -4,7 +4,7 @@
   "description": "A visual tool for wiring the Internet of Things",
   "homepage": "http://nodered.org",
   "license": "Apache-2.0",
-  "main": "index.js",
+  "browser": "public/red/red.min.js",
   "author": "Nick O'Leary <nick.oleary@gmail.com>",
   "keywords": [
     "editor",
@@ -18,7 +18,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
+  "devDependencies": {
     "jsonata": "1.5.0"
   }
 }
