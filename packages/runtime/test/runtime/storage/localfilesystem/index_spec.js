@@ -34,9 +34,7 @@ describe('storage/localfilesystem', function() {
     var userDir = path.join(__dirname,".testUserHome");
     var testFlow = [{"type":"tab","id":"d8be2a6d.2741d8","label":"Sheet 1"}];
     beforeEach(function(done) {
-        fs.remove(userDir,function(err) {
-            fs.mkdir(userDir,done);
-        });
+        fs.ensureDir(userDir, done);
     });
     afterEach(function(done) {
         fs.remove(userDir,done);
