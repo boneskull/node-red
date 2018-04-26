@@ -171,15 +171,15 @@ if (parsedArgs.userDir) {
 }
 
 if (!settings.editorDir) {
-    settings.editorDir = path.resolve(process.env.NODE_RED_HOME, 'node_modules', '@node-red', 'editor');
+    settings.editorDir = path.dirname(require.resolve('@node-red/editor'));
 }
 
 if (!settings.runtimeDir) {
-    settings.runtimeDir = path.resolve(process.env.NODE_RED_HOME, 'node_modules', '@node-red', 'runtime');
+    settings.runtimeDir = path.dirname(require.resolve('@node-red/runtime'));
 }
 
 if (!settings.coreNodesDir) {
-    settings.coreNodesDir = path.resolve(process.env.NODE_RED_HOME, 'node_modules', '@node-red', 'core-nodes');
+    settings.coreNodesDir = path.dirname(require.resolve('@node-red/core-nodes'));
 }
 
 var RED = require(settings.runtimeDir);
