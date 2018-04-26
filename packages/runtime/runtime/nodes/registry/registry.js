@@ -35,6 +35,9 @@ var nodeConstructors = {};
 var nodeTypeToId = {};
 var moduleNodes = {};
 
+const icon_paths = {};
+let defaultIcon;
+
 function init(_settings,_loader) {
     settings = _settings;
     loader = _loader;
@@ -46,7 +49,8 @@ function init(_settings,_loader) {
     Node = require("../Node");
     events.removeListener("node-icon-dir",nodeIconDir);
     events.on("node-icon-dir",nodeIconDir);
-
+    icon_paths["node-red"] = [path.join(settings.editorDir, 'public', 'icons')];
+    defaultIcon = path.join(settings.editorDir, 'public', 'icons', 'arrow-in.png');
 }
 
 function load() {
@@ -584,11 +588,7 @@ function setModulePendingUpdated(module,version) {
     });
 }
 
-var icon_paths = {
-    "node-red":[path.resolve(__dirname + '/../../../../public/icons')]
-};
 var iconCache = {};
-var defaultIcon = path.resolve(__dirname + '/../../../../public/icons/arrow-in.png');
 
 function nodeIconDir(dir) {
     icon_paths[dir.name] = icon_paths[dir.name] || [];
