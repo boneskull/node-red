@@ -13,6 +13,9 @@
   "main": "lib/cli.js",
   "author": "Nick O'Leary <nick.oleary@gmail.com>",
   "dependencies": {
+    "@node-red/core-nodes": "^0.18.4",
+    "@node-red/editor": "^0.18.4",
+    "@node-red/runtime": "^0.18.4",
     "basic-auth": "2.0.0",
     "bcryptjs": "2.4.3",
     "express": "4.16.2",
