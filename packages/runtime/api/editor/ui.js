@@ -22,13 +22,13 @@ var theme = require("./theme");
 
 var redNodes;
 
-var templateDir = path.resolve(__dirname+"/../../../editor/templates");
 var editorTemplate;
 
 module.exports = {
     init: function(runtime) {
         redNodes = runtime.nodes;
-        editorTemplate = fs.readFileSync(path.join(templateDir,"index.mst"),"utf8");
+        this.editorDir = runtime.settings.editorDir;
+        editorTemplate = fs.readFileSync(path.join(runtime.settings.editorDir, 'templates', "index.mst"),"utf8");
         Mustache.parse(editorTemplate);
     },
 
@@ -52,5 +52,7 @@ module.exports = {
     editor: function(req,res) {
         res.send(Mustache.render(editorTemplate,theme.context()));
     },
-    editorResources: express.static(__dirname + '/../../../public')
+    get editorResources() {
+        return express.static(path.join(this.editorDir, 'public'));
+    }
 };
