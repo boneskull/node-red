@@ -27,6 +27,8 @@ var events = require("../../../../../runtime/runtime/events");
 
 var inherits = require("util").inherits;
 
+const EDITOR_PATH = path.dirname(require.resolve('@node-red/editor'));
+
 describe("red/nodes/registry/registry",function() {
 
     afterEach(function() {
@@ -37,11 +39,26 @@ describe("red/nodes/registry/registry",function() {
         s.available =  function() {return available;};
         s.set = sinon.spy(function(s,v) { return when.resolve();});
         s.get = function(s) { return initialConfig;};
+        s.editorDir = EDITOR_PATH;
         return s;
     }
 
-    var settings = stubSettings({},false,null);
-    var settingsWithStorageAndInitialConfig = stubSettings({},true,{"node-red":{module:"testModule",name:"testName",version:"testVersion",nodes:{"node":{id:"node-red/testName",name:"test",types:["a","b"],enabled:true}}}});
+    var settings = stubSettings({},false,{});
+    var settingsWithStorageAndInitialConfig = stubSettings({},true,{
+        "node-red":{
+            module:"testModule",
+            name:"testName",
+            version:"testVersion",
+            nodes:{
+                "node":{
+                    id:"node-red/testName",
+                    name:"test",
+                    types:["a","b"],
+                    enabled:true
+                }
+            }
+        }
+    });
 
     var testNodeSet1 = {
         id: "test-module/test-name",
@@ -96,6 +113,7 @@ describe("red/nodes/registry/registry",function() {
         it('migrates legacy format', function(done) {
             var legacySettings = {
                 available: function() { return true; },
+                editorDir: EDITOR_PATH,
                 set: sinon.stub().returns(when.resolve()),
                 get: function() { return {
                     "123": {
@@ -525,8 +543,16 @@ describe("red/nodes/registry/registry",function() {
     });
 
     describe('#getNodeIconPath', function() {
+        const EDITOR_PATH = path.dirname(require.resolve('@node-red/editor'));
+
+        beforeEach(function () {
+            typeRegistry.init({
+                editorDir: EDITOR_PATH
+            });
+        })
+
         it('returns the default icon when getting an unknown icon', function() {
-            var defaultIcon = path.resolve(__dirname+'/../../../../../public/icons/arrow-in.png');
+            var defaultIcon = path.resolve(EDITOR_PATH, 'public', 'icons', 'arrow-in.png');
             var iconPath = typeRegistry.getNodeIconPath('random-module','youwonthaveme.png');
             iconPath.should.eql(defaultIcon);
         });
@@ -539,7 +565,7 @@ describe("red/nodes/registry/registry",function() {
         });
 
         it('returns the debug icon when getting an unknown module', function() {
-            var debugIcon = path.resolve(__dirname+'/../../../../../public/icons/debug.png');
+            var debugIcon = path.resolve(EDITOR_PATH, 'public', 'icons', 'debug.png');
             var iconPath = typeRegistry.getNodeIconPath('unknown-module', 'debug.png');
             iconPath.should.eql(debugIcon);
         });
