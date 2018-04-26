@@ -18,6 +18,7 @@ var should = require("should");
 var sinon = require("sinon");
 var request = require("supertest");
 var express = require("express");
+var path = require('path');
 var editorApi = require("../../../../runtime/api/editor");
 var comms = require("../../../../runtime/api/editor/comms");
 var info = require("../../../../runtime/api/editor/settings");
@@ -72,7 +73,8 @@ describe("api/editor/index", function() {
         before(function() {
             app = editorApi.init({},{
                 log:{audit:function(){},error:function(msg){errors.push(msg)}},
-                settings:{httpNodeRoot:true, httpAdminRoot: true,disableEditor:false,exportNodeSettings:function(){}},
+                settings:{httpNodeRoot:true, httpAdminRoot: true,disableEditor:false,exportNodeSettings:function(){},
+                editorDir: path.dirname(require.resolve('@node-red/editor'))},
                 events:{on:function(){},removeListener:function(){}},
                 isStarted: function() { return isStarted; },
                 nodes: {paletteEditorEnabled: function() { return false }}
