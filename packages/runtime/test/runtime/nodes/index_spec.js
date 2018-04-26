@@ -53,7 +53,8 @@ describe("red/nodes/index", function() {
 
     var settings = {
         available: function() { return false },
-        get: function() { return false }
+        get: function() { return false },
+        editorDir: path.dirname(require.resolve('@node-red/editor'))
     };
 
     var EventEmitter = require('events').EventEmitter;
@@ -150,7 +151,10 @@ describe("red/nodes/index", function() {
                             });
                         }) ;
                         RED.init(http.createServer(function(req,res){app(req,res)}),
-                        {userDir: userDir});
+                        {
+                            userDir: userDir, 
+                            editorDir: path.dirname(require.resolve('@node-red/editor'))
+                        });
                         runtime.start().then(function () {
                             done();
                         });
