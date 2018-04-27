@@ -68,7 +68,6 @@ module.exports = function(grunt) {
             },
             all: [
                 'Gruntfile.js',
-                '.wallaby.js'
                 `${RUNTIME_PATH}/red.js`,
                 `${RUNTIME_PATH}/@(api|runtime)/**/*.js`,
                 `${CORE_NODES_PATH}/nodes/**/*.js`,
@@ -76,7 +75,7 @@ module.exports = function(grunt) {
             ],
             root: {
                 files: {
-                    src: ['Gruntfile.js', '.wallaby.js']
+                    src: ['Gruntfile.js']
                 }
             },
             runtime: {
